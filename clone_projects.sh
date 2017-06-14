@@ -126,3 +126,5 @@ do
     rm -rf $clearname
 
 done < "$filename"
+
+echo "Finished."
