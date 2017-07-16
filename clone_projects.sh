@@ -98,7 +98,10 @@ do
       git log --pretty=fuller --no-merges --date=iso --numstat --diff-filter=ADM > $targetfile_commits
 
       # save merge logs
-      git log --pretty=fuller --merges --date=iso > $targetfile_merges
+	  # see https://stackoverflow.com/a/37802111
+	  # see https://git-scm.com/docs/git-log#git-log--m
+	  # see http://marcgg.com/blog/2015/08/04/git-first-parent-log/
+      git log --pretty=fuller --merges --date=iso --numstat -m --first-parent > $targetfile_merges
 
       # generate row for branch CSV
       output=$name","$branch
