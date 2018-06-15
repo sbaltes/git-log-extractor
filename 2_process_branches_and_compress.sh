@@ -10,6 +10,9 @@ if [ -f $output_file ]; then
     echo "Branches CSV deleted."
 fi
 
+# create branch directory if it does not exist
+mkdir -p "$branch_directory"
+
 # move branch csvs out of log directory
 mv "$log_directory/"*"_branches.csv" "$branch_directory/"
 
@@ -38,4 +41,10 @@ echo "Compressing branches CSV..."
 gzip -k "$output_file"
 echo "Branches CSV compressed."
 
+echo "Compressing git logs..."
+tar -zcf "$log_directory/../logs.tar.gz" "$log_directory"
+echo "Git logs compressed."
 
+echo "Compressing branch info..."
+tar -zcf "$branch_directory/../branch-info.tar.gz" "$branch_directory"
+echo "Branch info compressed."

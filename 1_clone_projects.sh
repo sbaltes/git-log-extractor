@@ -6,6 +6,9 @@ filename="$1"
 targetdir="${2%/}" # remove trailing slash, absolute path must be used
 counter=0
 
+# create target dir if it does not exist
+mkdir -p "$targetdir"
+
 while read -r line || [[ -n "$line" ]]; # do not ignore last line (see https://stackoverflow.com/a/10929511)
 do
     counter=$((counter+1))
