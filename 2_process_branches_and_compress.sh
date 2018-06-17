@@ -46,5 +46,5 @@ tar -zcf "$log_directory/../logs.tar.gz" "$log_directory"
 echo "Git logs compressed."
 
 echo "Compressing branch info..."
-tar -zcf "$branch_directory/../branch-info.tar.gz" "$branch_directory"
+tar -zcf "$branch_directory/../branches.tar.gz" "$branch_directory"
 echo "Branch info compressed."
