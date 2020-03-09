@@ -1,6 +1,6 @@
 # git-log-extractor
 
-Clone a list of GitHub projects and save the git-log of all branches.
+Clone a list of GitHub projects and save commits containing URLs in the commit message.
 
 Usage: Edit parameters in `run.sh` and execute that script.
 
