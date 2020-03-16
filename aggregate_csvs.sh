@@ -15,6 +15,8 @@ do
 
   prefix="$repo_owner,$repo_name,$branch,$commit_type"
 
+  # Side effects: trimming leading whitespace, interpreting backslash sequences, skipping the last line if it's missing a terminating linefeed
+  # Source: https://stackoverflow.com/a/1521498
   while read line; do
     echo "$prefix,$line" >> $output_file
   done <"$file"
